@@ -1,0 +1,21 @@
+╔════════════════════════════════════════════════════════════════╗
+║              C# TO .EXE COMPILER - DiRoCo022                   ║
+╚════════════════════════════════════════════════════════════════╝
+
+ [1] Compile
+ [2] Config
+ [3] Quit
+
+Ruta de guardado: C:\Users\YourUser\Desktop\save
+
+---
+
+╔════════════════════════════════════════════════════════════════╗
+║                 COMPILATION RESULT                             ║
+╚════════════════════════════════════════════════════════════════╝
+
+ [STATUS] Compilation successful!
+ Path: C:\Users\YourUser\Desktop\MyProgram.exe
+
+ > Compile another file
+ > Return to main menu
