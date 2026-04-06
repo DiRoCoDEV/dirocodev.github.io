@@ -50,7 +50,7 @@
     <header class="p-4 md:p-6 border-b border-[#30363d] glass sticky top-0 z-50">
         <nav class="max-w-7xl mx-auto flex justify-between items-center">
             <div onclick="showView('home')" class="cursor-pointer flex items-center gap-3 group">
-                <img src="https://i.pinimg.com/474x/6c/55/d4/6c55d49dd6839b5b79e84a1aa6d2260d.jpg" alt="Logo" class="w-10 h-10 rounded-full border-2 border-blue-400 group-hover:scale-110 transition">
+                <img src="images/profile_photo.jpg" alt="Perfil" class="w-10 h-10 rounded-full border-2 border-blue-400 group-hover:scale-110 transition">
                 <h1 class="text-xl font-bold text-white">DiRoCo<span class="text-blue-400">022</span></h1>
             </div>
             
@@ -82,8 +82,6 @@
                 </div>
                 <div class="flex flex-wrap gap-2" id="tech-filters">
                     <button onclick="filterProjects('all', this)" class="filter-btn active-filter px-4 py-2 rounded-lg text-sm transition-all border border-transparent" data-i18n="filter_all">Todos</button>
-                    <button onclick="filterProjects('unity', this)" class="filter-btn px-4 py-2 rounded-lg bg-[#21262d] text-gray-300 text-sm hover:border-blue-400 border border-transparent transition-all">Unity</button>
-                    <button onclick="filterProjects('python', this)" class="filter-btn px-4 py-2 rounded-lg bg-[#21262d] text-gray-300 text-sm hover:border-yellow-500 border border-transparent transition-all">Python</button>
                     <button onclick="filterProjects('csharp', this)" class="filter-btn px-4 py-2 rounded-lg bg-[#21262d] text-gray-300 text-sm hover:border-purple-500 border border-transparent transition-all">C#</button>
                 </div>
             </div>
@@ -94,9 +92,9 @@
         <section id="view-about" class="hidden fade-in">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10 bg-[#161b22] p-8 rounded-2xl border border-gray-800">
                 <div class="flex flex-col items-center text-center border-b md:border-b-0 md:border-r border-gray-800 pb-8 md:pb-0 md:pr-8">
-                    <img src="https://i.pinimg.com/474x/6c/55/d4/6c55d49dd6839b5b79e84a1aa6d2260d.jpg" class="w-40 h-40 rounded-full border-4 border-gray-800 mb-6 shadow-xl">
+                    <img src="images/profile_photo.jpg" class="w-40 h-40 rounded-full border-4 border-gray-800 mb-6 shadow-xl">
                     <h3 class="text-2xl font-bold text-white">DiRoCo022</h3>
-                    <p class="text-blue-400 font-mono text-sm mb-6">Full-Stack & Game Dev</p>
+                    <p class="text-blue-400 font-mono text-sm mb-6">Junior Developer</p>
                     <div class="w-full space-y-4">
                         <div class="text-left">
                             <div class="flex justify-between text-[10px] uppercase font-bold text-gray-500 mb-1"><span>Unity</span><span>90%</span></div>
@@ -111,12 +109,11 @@
                 <div class="md:col-span-2 space-y-6">
                     <h2 class="text-3xl font-bold text-white" data-i18n="about_title">Mi Perfil Profesional</h2>
                     <p class="text-gray-400 leading-relaxed" data-i18n="about_desc">
-                        Desarrollador apasionado por crear herramientas eficientes y experiencias de juego envolventes. 
-                        Me especializo en la arquitectura de sistemas y la optimización de procesos. Mi enfoque principal es el desarrollo en Unity (C#) y la automatización con Python.
+                        Junior developer especializado en C#, Python y HTML. Me enfoco en crear proyectos rápidos y funcionales, con atención en buenas prácticas y aprendizaje constante.
                     </p>
                     <h3 class="text-lg font-bold text-white pt-4 border-t border-gray-800" data-i18n="about_stack">Stack Tecnológico</h3>
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                        <div class="skill-badge p-4 rounded-xl flex items-center gap-3"><i class="fab fa-unity text-xl text-white"></i><span>Unity 3D</span></div>
+                        <div class="skill-badge p-4 rounded-xl flex items-center gap-3"><i class="fas fa-code text-xl text-gray-200"></i><span>HTML</span></div>
                         <div class="skill-badge p-4 rounded-xl flex items-center gap-3"><i class="fab fa-python text-xl text-yellow-500"></i><span>Python</span></div>
                         <div class="skill-badge p-4 rounded-xl flex items-center gap-3"><i class="fas fa-terminal text-xl text-purple-500"></i><span>C# .NET</span></div>
                     </div>
@@ -152,6 +149,10 @@
                         <div class="flex items-center gap-4 p-4 bg-[#161b22] rounded-xl border border-gray-800 cursor-pointer hover:border-blue-500 transition" onclick="copyText('contacto@diroco.dev')">
                             <i class="fas fa-envelope text-blue-400"></i>
                             <div><p class="text-[10px] text-gray-500 uppercase font-bold">Email</p><p>contacto@diroco.dev</p></div>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 bg-[#161b22] rounded-xl border border-gray-800 cursor-pointer hover:border-green-500 transition" onclick="copyText('diroco022')">
+                            <i class="fab fa-discord text-indigo-400"></i>
+                            <div><p class="text-[10px] text-gray-500 uppercase font-bold">Discord</p><p>diroco022</p></div>
                         </div>
                     </div>
                 </div>
@@ -205,9 +206,9 @@
         const i18n = {
             es: {
                 nav_projects: "Proyectos", nav_about: "Sobre Mí", nav_downloads: "Descargas", nav_contact: "Contacto",
-                home_title: "Explorar Lab", home_subtitle: "Archivos cargados directamente desde el repositorio.",
+                home_title: "Portafolio Junior", home_subtitle: "Junior developer en C#, Python y HTML.",
                 filter_all: "Todos", about_title: "Mi Perfil Profesional", about_stack: "Stack Tecnológico",
-                about_desc: "Desarrollador apasionado por crear herramientas eficientes y experiencias de juego envolventes. Me especializo en la arquitectura de sistemas y la optimización de procesos.",
+                about_desc: "Junior developer especializado en C#, Python y HTML. Me enfoco en crear proyectos rápidos y funcionales, con atención en buenas prácticas y aprendizaje constante.",
                 downloads_title: "Centro de Recursos", th_file: "Archivo", th_type: "Tipo", th_size: "Peso", th_action: "Acción",
                 contact_title: "Contacta conmigo", contact_subtitle: "¿Interesado en una colaboración?", contact_btn: "Enviar Mensaje",
                 ws_back: "Volver a Proyectos", ws_copy: "Copiar Fuente", label_code: "Código Plano", label_output: "Consola de Salida",
@@ -216,9 +217,9 @@
             },
             en: {
                 nav_projects: "Projects", nav_about: "About Me", nav_downloads: "Downloads", nav_contact: "Contact",
-                home_title: "Explore Lab", home_subtitle: "Files loaded directly from the repository.",
+                home_title: "Junior Portfolio", home_subtitle: "Junior developer in C#, Python and HTML.",
                 filter_all: "All", about_title: "Professional Profile", about_stack: "Tech Stack",
-                about_desc: "Developer passionate about creating efficient tools and immersive gaming experiences. I specialize in system architecture and process optimization.",
+                about_desc: "Junior developer specialized in C#, Python and HTML. I focus on building fast and functional projects with attention to good practices and continuous learning.",
                 downloads_title: "Resource Center", th_file: "File", th_type: "Type", th_size: "Size", th_action: "Action",
                 contact_title: "Contact Me", contact_subtitle: "Interested in a collaboration?", contact_btn: "Send Message",
                 ws_back: "Back to Projects", ws_copy: "Copy Source", label_code: "Plain Code", label_output: "Output Console",
@@ -230,9 +231,7 @@
         let currentLang = 'es';
 
         const PROJECTS = [
-            { id: "ai-fsm", title: "Enemy AI System", tech: "unity", folder: "ia_enemigo", desc: { es: "IA basada en estados para Unity.", en: "State-based AI for Unity." }, file: "EnemyController.cs", size: "124 KB" },
-            { id: "py-cleaner", title: "Data Cleaner", tech: "python", folder: "python_tool", desc: { es: "Automatización de limpieza de datos.", en: "Data cleaning automation." }, file: "cleaner.py", size: "12 KB" },
-            { id: "net-api", title: "Core API Wrapper", tech: "csharp", folder: "api_wrapper", desc: { es: "Librería C# para manejo de APIs.", en: "C# library for API management." }, file: "ApiHelper.cs", size: "45 KB" }
+            { id: "cs_autocompiler", title: "CS Autocompiler", tech: "csharp", desc: { es: "Compilador automático para proyectos en C#.", en: "Automatic compiler for C# projects." }, size: "1.2 MB", download: "./projects/CS_AutoCompiler.zip" }
         ];
 
         function setLanguage(lang) {
@@ -266,15 +265,15 @@
             
             list.forEach(p => {
                 grid.innerHTML += `
-                    <div onclick="loadWorkspace('${p.folder}', '${p.file}')" class="project-card bg-[#161b22] p-6 rounded-2xl cursor-pointer">
+                    <div class="project-card bg-[#161b22] p-6 rounded-2xl">
                         <div class="flex justify-between mb-4">
                             <span class="text-[10px] font-bold text-blue-400 uppercase tracking-widest">${p.tech}</span>
                         </div>
                         <h3 class="text-lg font-bold text-white mb-2">${p.title}</h3>
                         <p class="text-sm text-gray-500 line-clamp-2">${p.desc[currentLang]}</p>
-                        <div class="mt-6 text-[10px] font-bold text-blue-400 uppercase tracking-widest flex items-center">
-                            ${i18n[currentLang].ws_view} <i class="fas fa-arrow-right ml-2 text-[8px]"></i>
-                        </div>
+                        <a href="${p.download}" download class="mt-6 inline-flex items-center justify-center px-4 py-3 rounded-full bg-blue-600 text-white text-sm font-semibold hover:bg-blue-500 transition">
+                            Descargar Proyecto
+                        </a>
                     </div>
                 `;
             });
@@ -306,9 +305,10 @@
                     <td class="p-5 text-xs text-gray-500 uppercase font-mono">${p.tech}</td>
                     <td class="p-5 text-xs text-gray-400 font-mono">${p.size}</td>
                     <td class="p-5 text-right">
-                        <button class="text-blue-400 hover:text-white transition" onclick="alert('Download started')">
+                        <a href="${p.download}" download class="text-blue-400 hover:text-white transition inline-flex items-center gap-2">
                             <i class="fas fa-download"></i>
-                        </button>
+                            Descargar
+                        </a>
                     </td>
                 </tr>
             `).join('');
