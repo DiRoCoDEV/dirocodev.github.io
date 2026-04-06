@@ -1,5 +1,7 @@
 # DiRoCo022 - Portfolio
 
+**Aviso**: Este portfolio es para uso personal únicamente. No se permite copiar, distribuir o usar el contenido sin permiso expreso del autor. El sitio está disponible en inglés y español, y el contenido no es seleccionable para evitar copias no autorizadas.
+
 ¡Bienvenido a mi portfolio personal! Soy DiRoCo022, un desarrollador junior especializado en C#, Python y HTML. Aquí muestro mis proyectos, habilidades y formas de contacto.
 
 ## 🚀 Tecnologías
