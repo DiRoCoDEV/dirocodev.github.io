@@ -37,7 +37,6 @@ Para desplegar en GitHub Pages, sube los archivos a tu repositorio y habilita Pa
 - **Discord**: diroco022
 - **Reddit**: DiRoCo022 / u/Electronic_Remove270
 - **YouTube**: [@diroco022](https://www.youtube.com/@diroco022)
-- **Email**: contacto@diroco.dev (a través del formulario en el sitio)
 
 ## 📝 Licencia
 
