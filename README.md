@@ -12,13 +12,12 @@ Welcome to my personal portfolio! I am DiRoCo022, a junior developer specializin
 
 - **Languages / Lenguajes**: C#, Python, HTML
 - **Tools / Herramientas**: Unity, VS Code, Visual Studio, OBS
-- **Frameworks**: .NET (for C#) / .NET (para C#)
 
 ## 📁 Featured Projects / Proyectos Destacados
 
 ### CS Autocompiler
 - **Description / Descripción**: Automatic compiler for C# projects. It simplifies compiling .cs files into executables.
-- **Tecnologies / Tecnologías**: C# .NET
+- **Tecnologies / Tecnologías**: C#
 - **Location / Ubicación**: `projects/CS_Autocompiler/`
 - **Files / Archivos**: `CS_AutoCompiler.cs`, `CS_AutoCompiler.zip`, `output.txt`
 
