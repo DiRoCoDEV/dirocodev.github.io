@@ -230,7 +230,7 @@
                 ws_back: "Volver a Proyectos", ws_copy: "Copiar Fuente", label_code: "Código Plano", label_output: "Consola de Salida",
                 toast_copy: "Copiado con éxito", ws_view: "Ver Workspace", form_name: "Nombre", form_email: "Email", form_msg: "Mensaje",
                 sending: "Enviando...", success_msg: "¡Mensaje enviado correctamente!", error_msg: "Error al enviar. Inténtalo de nuevo.",
-                download_project: "Descargar Proyecto", view_code: "Ver Código"
+                download_project: "Descargar Proyecto", view_code: "Ver Código", download_btn: "Descargar"
             },
             en: {
                 nav_projects: "Projects", nav_about: "About Me", nav_downloads: "Downloads", nav_contact: "Contact",
@@ -242,7 +242,7 @@
                 ws_back: "Back to Projects", ws_copy: "Copy Source", label_code: "Plain Code", label_output: "Output Console",
                 toast_copy: "Copied successfully", ws_view: "Open Workspace", form_name: "Name", form_email: "Email", form_msg: "Message",
                 sending: "Sending...", success_msg: "Message sent successfully!", error_msg: "Error sending message. Try again.",
-                download_project: "Download Project", view_code: "View Code"
+                download_project: "Download Project", view_code: "View Code", download_btn: "Download"
             }
         };
 
@@ -369,7 +369,7 @@
                     <td class="p-5 text-right">
                         <a href="${p.download}" download class="text-blue-400 hover:text-white transition inline-flex items-center gap-2">
                             <i class="fas fa-download"></i>
-                            Descargar
+                            ${i18n[currentLang].download_btn}
                         </a>
                     </td>
                 </tr>
