@@ -1,5 +1,7 @@
 # DiRoCo022 - Portfolio / Portafolio
 
+🌐 **[Visit my Portfolio](https://dirocodev.github.io/)** | 🌐 **[Visita mi Portfolio](https://dirocodev.github.io/)**
+
 **Notice**: This portfolio is for personal use only. Copying, distributing, or using the content without the author's express permission is not allowed. The site is available in English and Spanish, and content selection is disabled to prevent unauthorized copying.
 
 **Aviso**: Este portfolio es para uso personal únicamente. No se permite copiar, distribuir o usar el contenido sin permiso expreso del autor. El sitio está disponible en inglés y español, y el contenido no es seleccionable para evitar copias no autorizadas.
@@ -12,13 +14,12 @@ Welcome to my personal portfolio! I am DiRoCo022, a junior developer specializin
 
 - **Languages / Lenguajes**: C#, Python, HTML
 - **Tools / Herramientas**: Unity, VS Code, Visual Studio, OBS
-- **Frameworks**: .NET (for C#) / .NET (para C#)
 
 ## 📁 Featured Projects / Proyectos Destacados
 
 ### CS Autocompiler
 - **Description / Descripción**: Automatic compiler for C# projects. It simplifies compiling .cs files into executables.
-- **Tecnologies / Tecnologías**: C# .NET
+- **Tecnologies / Tecnologías**: C#
 - **Location / Ubicación**: `projects/CS_Autocompiler/`
 - **Files / Archivos**: `CS_AutoCompiler.cs`, `CS_AutoCompiler.zip`, `output.txt`
 
