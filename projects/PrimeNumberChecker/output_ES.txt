@@ -1,0 +1,130 @@
+﻿Números Primos del 1 al 100:
+
+2
+3
+5
+7
+11
+13
+17
+19
+23
+29
+31
+37
+41
+43
+47
+53
+59
+61
+67
+71
+73
+79
+83
+89
+97
+
+Lista Detallada:
+
+1 - no es primo
+2 - es primo
+3 - es primo
+4 - no es primo
+5 - es primo
+6 - no es primo
+7 - es primo
+8 - no es primo
+9 - no es primo
+10 - no es primo
+11 - es primo
+12 - no es primo
+13 - es primo
+14 - no es primo
+15 - no es primo
+16 - no es primo
+17 - es primo
+18 - no es primo
+19 - es primo
+20 - no es primo
+21 - no es primo
+22 - no es primo
+23 - es primo
+24 - no es primo
+25 - no es primo
+26 - no es primo
+27 - no es primo
+28 - no es primo
+29 - es primo
+30 - no es primo
+31 - es primo
+32 - no es primo
+33 - no es primo
+34 - no es primo
+35 - no es primo
+36 - no es primo
+37 - es primo
+38 - no es primo
+39 - no es primo
+40 - no es primo
+41 - es primo
+42 - no es primo
+43 - es primo
+44 - no es primo
+45 - no es primo
+46 - no es primo
+47 - es primo
+48 - no es primo
+49 - no es primo
+50 - no es primo
+51 - no es primo
+52 - no es primo
+53 - es primo
+54 - no es primo
+55 - no es primo
+56 - no es primo
+57 - no es primo
+58 - no es primo
+59 - es primo
+60 - no es primo
+61 - es primo
+62 - no es primo
+63 - no es primo
+64 - no es primo
+65 - no es primo
+66 - no es primo
+67 - es primo
+68 - no es primo
+69 - no es primo
+70 - no es primo
+71 - es primo
+72 - no es primo
+73 - es primo
+74 - no es primo
+75 - no es primo
+76 - no es primo
+77 - no es primo
+78 - no es primo
+79 - es primo
+80 - no es primo
+81 - no es primo
+82 - no es primo
+83 - es primo
+84 - no es primo
+85 - no es primo
+86 - no es primo
+87 - no es primo
+88 - no es primo
+89 - es primo
+90 - no es primo
+91 - no es primo
+92 - no es primo
+93 - no es primo
+94 - no es primo
+95 - no es primo
+96 - no es primo
+97 - es primo
+98 - no es primo
+99 - no es primo
+100 - no es primo

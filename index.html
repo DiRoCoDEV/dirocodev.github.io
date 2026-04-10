@@ -229,7 +229,8 @@
                 contact_title: "Contacta conmigo", contact_subtitle: "¿Interesado en una colaboración?", contact_btn: "Enviar Mensaje",
                 ws_back: "Volver a Proyectos", ws_copy: "Copiar Fuente", label_code: "Código Plano", label_output: "Consola de Salida",
                 toast_copy: "Copiado con éxito", ws_view: "Ver Workspace", form_name: "Nombre", form_email: "Email", form_msg: "Mensaje",
-                sending: "Enviando...", success_msg: "¡Mensaje enviado correctamente!", error_msg: "Error al enviar. Inténtalo de nuevo."
+                sending: "Enviando...", success_msg: "¡Mensaje enviado correctamente!", error_msg: "Error al enviar. Inténtalo de nuevo.",
+                download_project: "Descargar Proyecto", view_code: "Ver Código"
             },
             en: {
                 nav_projects: "Projects", nav_about: "About Me", nav_downloads: "Downloads", nav_contact: "Contact",
@@ -240,15 +241,23 @@
                 contact_title: "Contact Me", contact_subtitle: "Interested in a collaboration?", contact_btn: "Send Message",
                 ws_back: "Back to Projects", ws_copy: "Copy Source", label_code: "Plain Code", label_output: "Output Console",
                 toast_copy: "Copied successfully", ws_view: "Open Workspace", form_name: "Name", form_email: "Email", form_msg: "Message",
-                sending: "Sending...", success_msg: "Message sent successfully!", error_msg: "Error sending message. Try again."
+                sending: "Sending...", success_msg: "Message sent successfully!", error_msg: "Error sending message. Try again.",
+                download_project: "Download Project", view_code: "View Code"
             }
         };
 
         let currentLang = 'es';
 
         const PROJECTS = [
-            { id: "cs_autocompiler", title: "CS Autocompiler", tech: "csharp", desc: { es: "Compilador automático para proyectos en C#.", en: "Automatic compiler for C# projects." }, size: "1.2 MB", download: "./projects/CS_Autocompiler/CS_AutoCompiler.zip", folder: "CS_Autocompiler", filename: "CS_AutoCompiler.cs" }
+            { id: "fibonacci", title: "Fibonacci Sequence", tech: "csharp", desc: { es: "Genera la secuencia de Fibonacci.", en: "Generates the Fibonacci sequence." }, size: "1.0 KB", download: "./projects/Fibonacci.zip", folder: "Fibonacci", basefilename: "Fibonacci" },
+            { id: "multiples", title: "Multiples Checker", tech: "csharp", desc: { es: "Verifica múltiplos de 3 y 5.", en: "Checks multiples of 3 and 5." }, size: "1.0 KB", download: "./projects/Multiples.zip", folder: "Multiples", basefilename: "Multiples" },
+            { id: "prime_checker", title: "Prime Number Checker", tech: "csharp", desc: { es: "Verifica números primos.", en: "Checks prime numbers." }, size: "1.0 KB", download: "./projects/PrimeNumberChecker.zip", folder: "PrimeNumberChecker", basefilename: "PrimeNumberChecker" },
+            { id: "word_repeater", title: "Word Repeater", tech: "csharp", desc: { es: "Repite una palabra varias veces.", en: "Repeats a word multiple times." }, size: "1.0 KB", download: "./projects/WordRepeter.zip", folder: "WordRepeter", basefilename: "WordRepeter" },
+            { id: "cs_autocompiler", title: "CS Autocompiler", tech: "csharp", desc: { es: "Compilador automático para proyectos en C#.", en: "Automatic compiler for C# projects." }, size: "1.2 MB", download: "./projects/CS_Autocompiler.zip", folder: "CS_Autocompiler", basefilename: "CS_AutoCompiler" }
         ];
+
+        let currentWorkspaceFolder = null;
+        let currentWorkspaceFilename = null;
 
         function setLanguage(lang) {
             currentLang = lang;
@@ -266,6 +275,27 @@
 
             renderGrid();
             renderDownloads();
+            
+            // Reload workspace if open
+            if (currentWorkspaceFolder && currentWorkspaceFilename && document.getElementById('view-workspace').classList.contains('hidden') === false) {
+                const codeBox = document.getElementById('ws-code');
+                const outputBox = document.getElementById('ws-output');
+                const langSuffix = lang === 'es' ? '_ES' : '_EN';
+                const fullFilename = currentWorkspaceFilename + langSuffix + '.cs';
+                const outputFilename = lang === 'es' ? 'output_ES.txt' : 'output_EN.txt';
+                
+                document.getElementById('ws-filename').innerText = fullFilename;
+                
+                // Reload code file
+                fetch(`./projects/${currentWorkspaceFolder}/${fullFilename}`)
+                    .then(res => res.ok ? res.text() : "// Error loading file.")
+                    .then(text => codeBox.innerText = text);
+                
+                // Reload output file
+                fetch(`./projects/${currentWorkspaceFolder}/${outputFilename}`)
+                    .then(res => res.ok ? res.text() : ">> Output not available.")
+                    .then(text => outputBox.innerText = text);
+            }
         }
 
         function showView(viewId) {
@@ -289,10 +319,10 @@
                         <p class="text-sm text-gray-500 line-clamp-2">${p.desc[currentLang]}</p>
                         <div class="mt-6 flex flex-col gap-3 sm:flex-row">
                             <a href="${p.download}" download class="inline-flex items-center justify-center px-4 py-3 rounded-full bg-blue-600 text-white text-sm font-semibold hover:bg-blue-500 transition">
-                                Descargar Proyecto
+                                ${i18n[currentLang].download_project}
                             </a>
-                            <button onclick="loadWorkspace('${p.folder}', '${p.filename}')" class="inline-flex items-center justify-center px-4 py-3 rounded-full bg-gray-800 text-white text-sm font-semibold hover:bg-gray-700 transition">
-                                Ver Código
+                            <button onclick="loadWorkspace('${p.folder}', '${p.basefilename}')" class="inline-flex items-center justify-center px-4 py-3 rounded-full bg-gray-800 text-white text-sm font-semibold hover:bg-gray-700 transition">
+                                ${i18n[currentLang].view_code}
                             </button>
                         </div>
                     </div>
@@ -300,23 +330,32 @@
             });
         }
 
-        async function loadWorkspace(folder, filename) {
+        async function loadWorkspace(folder, basefilename) {
+            currentWorkspaceFolder = folder;
+            currentWorkspaceFilename = basefilename;
+            
+            // Construct the full filename with language suffix
+            const extension = '.cs';
+            const langSuffix = currentLang === 'es' ? '_ES' : '_EN';
+            const fullFilename = basefilename + langSuffix + extension;
+            
             showView('workspace');
             const codeBox = document.getElementById('ws-code');
             const outputBox = document.getElementById('ws-output');
-            document.getElementById('ws-filename').innerText = filename;
+            document.getElementById('ws-filename').innerText = fullFilename;
             document.getElementById('ws-outputname').innerText = 'output.txt';
             codeBox.innerText = "// Loading...";
             outputBox.innerText = "// Loading log...";
 
             try {
-                const codeRes = await fetch(`./projects/${folder}/${filename}`);
-                const outputRes = await fetch(`./projects/${folder}/output.txt`);
+                const codeRes = await fetch(`./projects/${folder}/${fullFilename}`);
+                const outputFilename = currentLang === 'es' ? 'output_ES.txt' : 'output_EN.txt';
+                const outputRes = await fetch(`./projects/${folder}/${outputFilename}`);
                 codeBox.innerText = codeRes.ok ? await codeRes.text() : "// Error loading file.";
-                outputBox.innerText = outputRes.ok ? await outputRes.text() : ">> No hay salida disponible.";
+                outputBox.innerText = outputRes.ok ? await outputRes.text() : ">> No output available.";
             } catch (e) {
                 codeBox.innerText = "// Connection error.";
-                outputBox.innerText = ">> No hay salida disponible.";
+                outputBox.innerText = ">> No output available.";
             }
         }
 
