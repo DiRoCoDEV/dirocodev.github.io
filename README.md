@@ -23,11 +23,22 @@ Welcome to my personal portfolio! I am DiRoCo022, a junior developer specializin
 - **Location / Ubicación**: `projects/CS_Autocompiler/`
 - **Files / Archivos**: `CS_AutoCompiler.cs`, `CS_AutoCompiler.zip`, `output.txt`
 
+
+
+### WordRepeter
+- **Description / Descripción**: Simple C# tool to repeat a given word a specified number of times. Herramienta simple en C# para repetir una palabra un número específico de veces.
+- **Tecnologies / Tecnologías**: C#
+- **Location / Ubicación**: `projects/WordRepeter/`
+- **Files / Archivos**: `WordRepeter_EN.cs`, `WordRepeter_ES.cs`, `WordRepeter.zip`
+
+
+
 ## 📞 Contact / Contacto
 
 - **Discord**: diroco022
 - **Reddit**: DiRoCo022 / u/Electronic_Remove270
 - **YouTube**: [@diroco022](https://www.youtube.com/@diroco022)
+- **Sololearn**: [DiRoCo022](https://www.sololearn.com/es/profile/31553181)
 
 ## 📝 License / Licencia
 
